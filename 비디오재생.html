@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        #myVideo{
+            transform: rotate(180deg);
+            border: 30px, red;
+            opacity: 1.0;
+            transform: scale(2,2);
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+<script>
+    var x = 1;
+function playMovie(){
+    var myVideo = document.getElementById("myVideo");
+    myVideo.play();
+}
+function pauseVideo(){
+    var myVideo = document.getElementById("myVideo");
+    myVideo.pause();
+}
+function fadeOut(){
+    
+    var myVideo = document.getElementById("myVideo");
+    myVideo.style.opacity=(x -= 0.1);
+
+}
+function setScale(){
+    var t = 0;
+    var l = 0;
+    var myVideo = document.getElementById("myVideo");
+    myVideo.style.scale.left=(l += 5)+"px";
+    myVideo.style.scale.top=(t += 5)+"px";
+
+}
+
+</script>
+</head>
+<body>
+    <button onclick = "playMovie()">재생하기</button>
+    <button onclick="pauseVideo()">정지하기</button>
+    <button onclick="fadeOut()">Fadeout</button>
+    <button onclick="setScale()">크기설정</button>
+    <div>
+    <video id = "myVideo">
+        <source src="https://www.w3schools.com/html/Mov_bbb.mp4"type ="video/mp4">
+    </video>
+    </div>
+</body>
+</html>

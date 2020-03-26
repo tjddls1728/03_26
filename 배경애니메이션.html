@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+<style>
+body{
+    margin: 0px;
+}
+
+div{
+    background: yellow;
+    background-image: url("game_bg.jpg");
+    background-repeat: repeat-x;
+    height: 640px;
+    
+}
+#pi{
+    width: 700px;
+    position: absolute;
+    left: 600px;
+    top: 100px;
+    transform: rotate(30deg);
+    
+
+}
+</style>
+<script>
+    var x=0;
+    var r= 0;
+// 문서내의 div안의 배경이미지의 x좌표를 음수로 누적시킨다!!!
+function moveBg(){
+    x =x-10;
+    var bg = document.getElementById("bg");
+    bg.style.backgroundPosition=x+"px 0px";
+    
+    r -= 1;
+    var pi = document.getElementById("pi")
+    pi.style.transform="rotate("+r+"deg)";
+}
+function auto(){
+    setInterval("moveBg()" ,100);  
+        
+    
+}
+</script>
+</head>
+<body>
+<!-- 화면을 분할하는 용도의 태그 투명,초기의 크기는 없다. -->
+    <div id="bg" >
+        <button onclick="auto();">Game Start</button>
+        <img src="untitled.png" id="pi"/>
+    </div>
+
+</body>
+</html>
